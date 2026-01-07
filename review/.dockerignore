@@ -1,0 +1,7 @@
+target/
+*.md
+.gitignore
+.git/
+.gitattributes
+.DS_Store
+*.log

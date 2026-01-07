@@ -1,0 +1,424 @@
+{
+	"info": {
+		"_postman_id": "rabbitmq-microservices-collection",
+		"name": "RabbitMQ Microservices - Company & Review",
+		"description": "Complete API collection for Company and Review microservices with RabbitMQ integration",
+		"schema": "https://schema.getpostman.com/json/collection/v2.1.0/collection.json"
+	},
+	"item": [
+		{
+			"name": "Company Service",
+			"item": [
+				{
+					"name": "Create Company",
+					"request": {
+						"method": "POST",
+						"header": [
+							{
+								"key": "Content-Type",
+								"value": "application/json"
+							}
+						],
+						"body": {
+							"mode": "raw",
+							"raw": "{\n  \"name\": \"Tech Innovations Inc\",\n  \"industry\": \"Technology\",\n  \"description\": \"Leading provider of innovative software solutions and cloud services\",\n  \"email\": \"contact@techinnovations.com\",\n  \"location\": \"San Francisco, CA\"\n}"
+						},
+						"url": {
+							"raw": "http://localhost:8081/api/companies",
+							"protocol": "http",
+							"host": [
+								"localhost"
+							],
+							"port": "8081",
+							"path": [
+								"api",
+								"companies"
+							]
+						},
+						"description": "Creates a new company in the system"
+					},
+					"response": []
+				},
+				{
+					"name": "Get All Companies",
+					"request": {
+						"method": "GET",
+						"header": [],
+						"url": {
+							"raw": "http://localhost:8081/api/companies",
+							"protocol": "http",
+							"host": [
+								"localhost"
+							],
+							"port": "8081",
+							"path": [
+								"api",
+								"companies"
+							]
+						},
+						"description": "Retrieves all companies"
+					},
+					"response": []
+				},
+				{
+					"name": "Get Company By ID",
+					"request": {
+						"method": "GET",
+						"header": [],
+						"url": {
+							"raw": "http://localhost:8081/api/companies/1",
+							"protocol": "http",
+							"host": [
+								"localhost"
+							],
+							"port": "8081",
+							"path": [
+								"api",
+								"companies",
+								"1"
+							]
+						},
+						"description": "Retrieves a specific company by ID"
+					},
+					"response": []
+				},
+				{
+					"name": "Get Companies By Industry",
+					"request": {
+						"method": "GET",
+						"header": [],
+						"url": {
+							"raw": "http://localhost:8081/api/companies/industry/Technology",
+							"protocol": "http",
+							"host": [
+								"localhost"
+							],
+							"port": "8081",
+							"path": [
+								"api",
+								"companies",
+								"industry",
+								"Technology"
+							]
+						},
+						"description": "Retrieves all companies in a specific industry"
+					},
+					"response": []
+				},
+				{
+					"name": "Update Company",
+					"request": {
+						"method": "PUT",
+						"header": [
+							{
+								"key": "Content-Type",
+								"value": "application/json"
+							}
+						],
+						"body": {
+							"mode": "raw",
+							"raw": "{\n  \"name\": \"Tech Innovations Corp\",\n  \"industry\": \"Technology\",\n  \"description\": \"Updated description - Leading provider of AI and ML solutions\",\n  \"email\": \"info@techinnovations.com\",\n  \"location\": \"San Francisco, CA\"\n}"
+						},
+						"url": {
+							"raw": "http://localhost:8081/api/companies/1",
+							"protocol": "http",
+							"host": [
+								"localhost"
+							],
+							"port": "8081",
+							"path": [
+								"api",
+								"companies",
+								"1"
+							]
+						},
+						"description": "Updates an existing company"
+					},
+					"response": []
+				},
+				{
+					"name": "Delete Company",
+					"request": {
+						"method": "DELETE",
+						"header": [],
+						"url": {
+							"raw": "http://localhost:8081/api/companies/1",
+							"protocol": "http",
+							"host": [
+								"localhost"
+							],
+							"port": "8081",
+							"path": [
+								"api",
+								"companies",
+								"1"
+							]
+						},
+						"description": "Deletes a company by ID"
+					},
+					"response": []
+				}
+			],
+			"description": "Company Service API endpoints (Port 8081)"
+		},
+		{
+			"name": "Review Service",
+			"item": [
+				{
+					"name": "Create Review",
+					"request": {
+						"method": "POST",
+						"header": [
+							{
+								"key": "Content-Type",
+								"value": "application/json"
+							}
+						],
+						"body": {
+							"mode": "raw",
+							"raw": "{\n  \"companyId\": 1,\n  \"companyName\": \"Tech Innovations Inc\",\n  \"reviewerName\": \"John Doe\",\n  \"rating\": 5,\n  \"comment\": \"Excellent company with great work culture and innovative projects. Highly recommend!\",\n  \"reviewDate\": \"2026-01-07T10:30:00\",\n  \"isVerified\": false\n}"
+						},
+						"url": {
+							"raw": "http://localhost:8082/api/reviews",
+							"protocol": "http",
+							"host": [
+								"localhost"
+							],
+							"port": "8082",
+							"path": [
+								"api",
+								"reviews"
+							]
+						},
+						"description": "Creates a new review for a company"
+					},
+					"response": []
+				},
+				{
+					"name": "Get All Reviews",
+					"request": {
+						"method": "GET",
+						"header": [],
+						"url": {
+							"raw": "http://localhost:8082/api/reviews",
+							"protocol": "http",
+							"host": [
+								"localhost"
+							],
+							"port": "8082",
+							"path": [
+								"api",
+								"reviews"
+							]
+						},
+						"description": "Retrieves all reviews"
+					},
+					"response": []
+				},
+				{
+					"name": "Get Review By ID",
+					"request": {
+						"method": "GET",
+						"header": [],
+						"url": {
+							"raw": "http://localhost:8082/api/reviews/1",
+							"protocol": "http",
+							"host": [
+								"localhost"
+							],
+							"port": "8082",
+							"path": [
+								"api",
+								"reviews",
+								"1"
+							]
+						},
+						"description": "Retrieves a specific review by ID"
+					},
+					"response": []
+				},
+				{
+					"name": "Get Reviews By Company ID",
+					"request": {
+						"method": "GET",
+						"header": [],
+						"url": {
+							"raw": "http://localhost:8082/api/reviews/company/1",
+							"protocol": "http",
+							"host": [
+								"localhost"
+							],
+							"port": "8082",
+							"path": [
+								"api",
+								"reviews",
+								"company",
+								"1"
+							]
+						},
+						"description": "Retrieves all reviews for a specific company"
+					},
+					"response": []
+				},
+				{
+					"name": "Get Verified Reviews By Company ID",
+					"request": {
+						"method": "GET",
+						"header": [],
+						"url": {
+							"raw": "http://localhost:8082/api/reviews/company/1/verified",
+							"protocol": "http",
+							"host": [
+								"localhost"
+							],
+							"port": "8082",
+							"path": [
+								"api",
+								"reviews",
+								"company",
+								"1",
+								"verified"
+							]
+						},
+						"description": "Retrieves only verified reviews for a specific company"
+					},
+					"response": []
+				},
+				{
+					"name": "Verify Review",
+					"request": {
+						"method": "PATCH",
+						"header": [],
+						"url": {
+							"raw": "http://localhost:8082/api/reviews/1/verify",
+							"protocol": "http",
+							"host": [
+								"localhost"
+							],
+							"port": "8082",
+							"path": [
+								"api",
+								"reviews",
+								"1",
+								"verify"
+							]
+						},
+						"description": "Marks a review as verified"
+					},
+					"response": []
+				},
+				{
+					"name": "Update Review",
+					"request": {
+						"method": "PUT",
+						"header": [
+							{
+								"key": "Content-Type",
+								"value": "application/json"
+							}
+						],
+						"body": {
+							"mode": "raw",
+							"raw": "{\n  \"companyId\": 1,\n  \"companyName\": \"Tech Innovations Inc\",\n  \"reviewerName\": \"John Doe\",\n  \"rating\": 4,\n  \"comment\": \"Updated review - Great company overall, some areas for improvement in work-life balance.\",\n  \"reviewDate\": \"2026-01-07T10:30:00\",\n  \"isVerified\": true\n}"
+						},
+						"url": {
+							"raw": "http://localhost:8082/api/reviews/1",
+							"protocol": "http",
+							"host": [
+								"localhost"
+							],
+							"port": "8082",
+							"path": [
+								"api",
+								"reviews",
+								"1"
+							]
+						},
+						"description": "Updates an existing review"
+					},
+					"response": []
+				},
+				{
+					"name": "Delete Review",
+					"request": {
+						"method": "DELETE",
+						"header": [],
+						"url": {
+							"raw": "http://localhost:8082/api/reviews/1",
+							"protocol": "http",
+							"host": [
+								"localhost"
+							],
+							"port": "8082",
+							"path": [
+								"api",
+								"reviews",
+								"1"
+							]
+						},
+						"description": "Deletes a review by ID"
+					},
+					"response": []
+				},
+				{
+					"name": "Get All Companies (Review Service)",
+					"request": {
+						"method": "GET",
+						"header": [],
+						"url": {
+							"raw": "http://localhost:8082/api/reviews/companies",
+							"protocol": "http",
+							"host": [
+								"localhost"
+							],
+							"port": "8082",
+							"path": [
+								"api",
+								"reviews",
+								"companies"
+							]
+						},
+						"description": "Retrieves all companies synced from Company Service via RabbitMQ"
+					},
+					"response": []
+				},
+				{
+					"name": "Get Active Companies (Review Service)",
+					"request": {
+						"method": "GET",
+						"header": [],
+						"url": {
+							"raw": "http://localhost:8082/api/reviews/companies/active",
+							"protocol": "http",
+							"host": [
+								"localhost"
+							],
+							"port": "8082",
+							"path": [
+								"api",
+								"reviews",
+								"companies",
+								"active"
+							]
+						},
+						"description": "Retrieves only active companies from the Review Service"
+					},
+					"response": []
+				}
+			],
+			"description": "Review Service API endpoints (Port 8082)"
+		}
+	],
+	"variable": [
+		{
+			"key": "company_service_url",
+			"value": "http://localhost:8081",
+			"type": "string"
+		},
+		{
+			"key": "review_service_url",
+			"value": "http://localhost:8082",
+			"type": "string"
+		}
+	]
+}
